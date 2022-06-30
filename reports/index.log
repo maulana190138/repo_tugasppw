@@ -17,38 +17,18 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import scrapy
-
-
-class QuotesSpider(scrapy.Spider):
-    name = "quotes"
-
-    def start_requests(self):
-        start_urls = [
-            'https://pta.trunojoyo.ac.id/welcome/index/10',
-            'https://pta.trunojoyo.ac.id/welcome/index/11',
-            'https://pta.trunojoyo.ac.id/welcome/index/12',
-            'https://pta.trunojoyo.ac.id/welcome/index/13',
-            'https://pta.trunojoyo.ac.id/welcome/index/14',
-        ]
-
-        for url in start_urls:
-            yield scrapy.Request(url=url, callback=self.parse)
-
-    def parse(self, response):
-        for item in response.css('#content_journal > ul > li'):
-            yield {
-                'Link': item.css(f'div:nth-child(3) > div:nth-child(5) > a::attr(href)').get(),
-            }
+pip install numpy
+pip install sklearn
+pip install pandas
+pip install matplotlib
+pip install seaborn
+pip install nltk
 ------------------
 
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Input [1;32mIn [1][0m, in [0;36m<cell line: 1>[1;34m()[0m
-[1;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mscrapy[39;00m
-[0;32m      4[0m [38;5;28;01mclass[39;00m [38;5;21;01mQuotesSpider[39;00m(scrapy[38;5;241m.[39mSpider):
-[0;32m      5[0m     name [38;5;241m=[39m [38;5;124m"[39m[38;5;124mquotes[39m[38;5;124m"[39m
+[1;36m  Input [1;32mIn [3][1;36m[0m
+[1;33m    pip install numpy[0m
+[1;37m        ^[0m
+[1;31mSyntaxError[0m[1;31m:[0m invalid syntax
 
-[1;31mModuleNotFoundError[0m: No module named 'scrapy'
-ModuleNotFoundError: No module named 'scrapy'
+SyntaxError: invalid syntax (1528083208.py, line 1)
 
